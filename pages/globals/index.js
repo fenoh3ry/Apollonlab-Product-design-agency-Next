@@ -4,7 +4,7 @@ import Head from 'next/head'
 import { DataProvider, Repeater } from '@teleporthq/react-components'
 import PropTypes from 'prop-types'
 
-import globalsPageInitialPropsTqJoResource from '../../resources/globals-page-initial-props-tq_jo'
+import globalsPageInitialPropsTqRdResource from '../../resources/globals-page-initial-props-tq_rd'
 
 const Globals1 = (props) => {
   return (
@@ -87,7 +87,7 @@ export default Globals1
 
 export async function getStaticProps(context) {
   try {
-    const response = await globalsPageInitialPropsTqJoResource({
+    const response = await globalsPageInitialPropsTqRdResource({
       ...context?.params,
       locale: context?.locale ?? 'en',
     })

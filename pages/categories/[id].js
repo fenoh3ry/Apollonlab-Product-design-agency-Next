@@ -4,8 +4,8 @@ import Head from 'next/head'
 import { DataProvider, Repeater } from '@teleporthq/react-components'
 import PropTypes from 'prop-types'
 
-import categoriesPageInitialPropsTqTcResource from '../../resources/categories-page-initial-props-tq_tc'
-import categoriesPageInitialPathsTqRIResource from '../../resources/categories-page-initial-paths-tq_r-i'
+import categoriesPageInitialPropsTqR5Resource from '../../resources/categories-page-initial-props-tq_r5'
+import categoriesPageInitialPathsTqHQResource from '../../resources/categories-page-initial-paths-tq_h-q'
 
 const Categories = (props) => {
   return (
@@ -74,7 +74,7 @@ export default Categories
 
 export async function getStaticProps(context) {
   try {
-    const response = await categoriesPageInitialPropsTqTcResource({
+    const response = await categoriesPageInitialPropsTqR5Resource({
       ...context?.params,
       locale: context?.locale ?? 'en',
     })
@@ -99,7 +99,7 @@ export async function getStaticProps(context) {
 
 export async function getStaticPaths() {
   try {
-    const response = await categoriesPageInitialPathsTqRIResource({})
+    const response = await categoriesPageInitialPathsTqHQResource({})
     return {
       paths: (response?.data || []).map((item) => {
         return {

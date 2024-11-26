@@ -4,8 +4,8 @@ import Head from 'next/head'
 import { DataProvider, Repeater } from '@teleporthq/react-components'
 import PropTypes from 'prop-types'
 
-import globalsPageInitialPropsTqNrResource from '../../resources/globals-page-initial-props-tq_nr'
-import globalsPageInitialPathsTqAuResource from '../../resources/globals-page-initial-paths-tq_au'
+import globalsPageInitialPropsTqDkResource from '../../resources/globals-page-initial-props-tq_dk'
+import globalsPageInitialPathsTqXmResource from '../../resources/globals-page-initial-paths-tq_xm'
 
 const Globals = (props) => {
   return (
@@ -74,7 +74,7 @@ export default Globals
 
 export async function getStaticProps(context) {
   try {
-    const response = await globalsPageInitialPropsTqNrResource({
+    const response = await globalsPageInitialPropsTqDkResource({
       ...context?.params,
       locale: context?.locale ?? 'en',
     })
@@ -99,7 +99,7 @@ export async function getStaticProps(context) {
 
 export async function getStaticPaths() {
   try {
-    const response = await globalsPageInitialPathsTqAuResource({})
+    const response = await globalsPageInitialPathsTqXmResource({})
     return {
       paths: (response?.data || []).map((item) => {
         return {

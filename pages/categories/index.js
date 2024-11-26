@@ -4,7 +4,7 @@ import Head from 'next/head'
 import { DataProvider, Repeater } from '@teleporthq/react-components'
 import PropTypes from 'prop-types'
 
-import categoriesPageInitialPropsTqUvResource from '../../resources/categories-page-initial-props-tq_uv'
+import categoriesPageInitialPropsTqMLResource from '../../resources/categories-page-initial-props-tq_m-l'
 
 const Categories1 = (props) => {
   return (
@@ -87,7 +87,7 @@ export default Categories1
 
 export async function getStaticProps(context) {
   try {
-    const response = await categoriesPageInitialPropsTqUvResource({
+    const response = await categoriesPageInitialPropsTqMLResource({
       ...context?.params,
       locale: context?.locale ?? 'en',
     })
